@@ -1,0 +1,35 @@
+<FileChoose>:
+    title: "Open File"
+    size_hint: .8, .8
+
+    BoxLayout:
+        orientation: "vertical"
+        FileChooser:
+            id: filechooser
+            FileChooserListLayout
+
+        Button:
+            size_hint: (1, 0.1)
+            text: "Load"
+            on_release: root.load(filechooser.path, filechooser.selection)
+            id: ldbtn
+
+
+<MyGridLayout>
+
+    id: text_input
+    cols: 1
+    BoxLayout:
+        
+        cols: 2 
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Button:
+            text: "Open File"
+            size_hint: (.2, .2)
+            on_press: root.open()
+
+        
+        TextInput
+            id: text_input
